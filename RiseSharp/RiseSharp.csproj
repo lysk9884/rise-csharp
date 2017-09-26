@@ -14,5 +14,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="NBitcoin" Version="4.0.0.38" />
   </ItemGroup>
 </Project>
