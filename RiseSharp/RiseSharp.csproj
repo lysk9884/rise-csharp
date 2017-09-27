@@ -11,9 +11,15 @@
     <Folder Include="Apis\" />
     <Folder Include="Apis\Responses\" />
     <Folder Include="Apis\Responses\Base\" />
+    <Folder Include="Apis\Interfaces\" />
+    <Folder Include="Apis\Requests\" />
+    <Folder Include="Apis\Requests\Base\" />
+    <Folder Include="Apis\Attributes\" />
+    <Folder Include="Apis\Constants\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="NBitcoin" Version="4.0.0.38" />
+    <PackageReference Include="System.Net.Http" Version="4.3.3" />
   </ItemGroup>
 </Project>
