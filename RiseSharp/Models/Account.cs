@@ -33,5 +33,8 @@ namespace RiseSharp.Models
 
 		[DataMember(Name = "u_multisignatures")]
 		public IList<object> UMultisignatures { get; set; }
+
+		[DataMember(Name = "username")]
+		public string UserName { get; set; }
 	}
 }

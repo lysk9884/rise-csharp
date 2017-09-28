@@ -5,7 +5,14 @@ namespace RiseSharp.Apis.Constants
     {
         #region NEW
 
+        public const string Enable = "enable";
+        public const string Disable = "disable";
+
         public const string PostGeneratePublicKey = "/api/accounts/generatePublicKey";
+        public const string GetDappsCategories = "api/dapps/categories";
+        public const string ToggleForging = "/api/delegates/forging/{0}"; //disable | enable
+        public const string GetForgingStatus = "/api/delegates/forging/status";
+        public const string GetNextForgers = "api/delegates/getNextForgers";
 
         #endregion
 
@@ -24,7 +31,7 @@ namespace RiseSharp.Apis.Constants
 		public const string GetBlocksBlock = "/api/blocks/get";
 		public const string GetBlocksHeight = "/api/blocks/getHeight";
 		public const string GetBlocksFee = "/api/blocks/getFee";
-		public const string GetBlocksFees = "/api/blocks/getFees";
+		public const string GetFeeSchedule = "/api/blocks/getFees";
 		public const string GetBlocksNethash = "/api/blocks/getNethash";
 		public const string GetBlocksMilestone = "/api/blocks/getMilestone";
 		public const string GetBlocksReward = "/api/blocks/getReward";
@@ -34,7 +41,7 @@ namespace RiseSharp.Apis.Constants
 		public const string GetAccount = "/api/accounts";
 		public const string GetAccountDelegates = "/api/accounts/delegates";
 		public const string GetAccountDelegatesFee = "/api/accounts/delegates/fee";
-		public const string GetAccountPublickey = "/api/accounts/getPublickey";
+		public const string GetAccountPublickey = "/api/accounts/getPublicKey";
 		public const string GetAccountBalance = "/api/accounts/getBalance";
 		public const string PostAccountOpen = "/api/accounts/open";
 		public const string PutAccountDelegateAdd = "/api/accounts/delegates";

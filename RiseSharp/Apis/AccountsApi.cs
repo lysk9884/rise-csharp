@@ -1,120 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using RiseSharp.Apis.Base;
+using RiseSharp.Apis.Constants;
+using RiseSharp.Apis.Interfaces;
 using RiseSharp.Apis.Requests;
 using RiseSharp.Apis.Responses;
-using RiseSharp.Interfaces.Apis;
 
 namespace RiseSharp.Apis
 {
-    public class AccountsApi : IAccountsApi
+    public class AccountsApi : BaseApi, IAccountsApi
     {
+        public PublicKeyResponse GeneratePublicKey(GeneratePublicKeyRequest Secret) 
+            => GeneratePublicKeyAsync(Secret).GetAwaiter().GetResult();
 
-        readonly UriBuilder UriBuilder;
-        readonly HttpClient HttpClient;
+        public Task<PublicKeyResponse> GeneratePublicKeyAsync(GeneratePublicKeyRequest Secret) 
+            => GetSimpleJsonAsync<PublicKeyResponse, GeneratePublicKeyRequest>(Secret, Api.PostGeneratePublicKey);
 
-        public AccountsApi()
-        {
-            HttpClient = new HttpClient();
+        public AccountResponse GetAccount(GetAccountRequest Address) 
+            => GetAccountAsync(Address).GetAwaiter().GetResult();
 
-            UriBuilder = new UriBuilder
-            {
-                Host = Constants.ApiParams.DefaultHost,
-                Scheme = Constants.ApiParams.Https,
-                Port = Constants.ApiParams.DefaultPort
-			};
-        }
+        public Task<AccountResponse> GetAccountAsync(GetAccountRequest Address) 
+            => GetSimpleJsonAsync<AccountResponse, GetAccountRequest>(Address, Api.GetAccount);
 
-        public PublicKeyResponse GeneratePublicKey(string Secret)
-        {
-            return GeneratePublicKeyAsync(Secret).GetAwaiter().GetResult();
-        }
+        public AccountResponse GetAccountByPublicKey(GetAccountByPublicKeyRequest PublicKey) 
+            => GetAccountByPublicKeyAsync(PublicKey).GetAwaiter().GetResult();
 
-        public Task<PublicKeyResponse> GeneratePublicKeyAsync(string Secret)
-        {
-            UriBuilder.Path = Constants.Api.PostGeneratePublicKey;
+        public Task<AccountResponse> GetAccountByPublicKeyAsync(GetAccountByPublicKeyRequest PublicKey) 
+            => GetSimpleJsonAsync<AccountResponse, GetAccountByPublicKeyRequest>(PublicKey, Api.GetAccount);
 
-            return HttpClient.PostJsonAsync<string, PublicKeyResponse>(UriBuilder.ToString(), Secret);
-        }
+        public BalanceResponse GetBalance(GetBalanceRequest Address) 
+            => GetBalanceAsync(Address).GetAwaiter().GetResult();
 
-        public AccountResponse GetAccount(string Address)
-        {
-            throw new NotImplementedException();
-        }
+        public Task<BalanceResponse> GetBalanceAsync(GetBalanceRequest Address) 
+            => GetSimpleJsonAsync<BalanceResponse, GetBalanceRequest>(Address, Api.GetAccountBalance);
 
-        public Task<AccountResponse> GetAccountAsync(string Address)
-        {
-            throw new NotImplementedException();
-        }
+        public DelegatesResponse GetDelegates(GetDelegatesRequest Address) 
+            => GetDelegatesAsync(Address).GetAwaiter().GetResult();
 
-        public AccountResponse GetAccountByPublicKey(string PublicKey)
-        {
-            throw new NotImplementedException();
-        }
+        public Task<DelegatesResponse> GetDelegatesAsync(GetDelegatesRequest Address) 
+            => GetSimpleJsonAsync<DelegatesResponse, GetDelegatesRequest>(Address, Api.GetAccountDelegates);
 
-        public Task<AccountResponse> GetAccountByPublicKeyAsync(string PublicKey)
-        {
-            throw new NotImplementedException();
-        }
+        public PublicKeyResponse GetPublicKey(GetPublicKeyRequest Address) 
+            => GetPublicKeyAsync(Address).GetAwaiter().GetResult();
 
-        public BalanceResponse GetBalance(string Address)
-        {
-            return GetBalanceAsync(Address).GetAwaiter().GetResult();
-        }
+        public Task<PublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest Address) 
+            => GetSimpleJsonAsync<PublicKeyResponse, GetPublicKeyRequest>(Address, Api.GetAccountPublickey);
 
-        public Task<BalanceResponse> GetBalanceAsync(string Address)
-        {
-            UriBuilder.Path = Constants.Api.GetAccountBalance;
+        public AccountResponse Open(OpenAccountRequest Secret)
+            => OpenAsync(Secret).GetAwaiter().GetResult();
 
-            var parameters = new Dictionary<string, string>
-            {
-                { Constants.QueryKeys.Address, Address }
-            };
-
-            return HttpClient.GetJsonAsync<BalanceResponse>(UriBuilder.ToString(), parameters);
-        }
-
-        public DelegatesResponse GetDelegates(string Address)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<DelegatesResponse> GetDelegatesAsync(string Address)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PublicKeyResponse GetPublicKey(string Address)
-        {
-            return GetPublicKeyAsync(Address).GetAwaiter().GetResult();
-        }
-
-        public Task<PublicKeyResponse> GetPublicKeyAsync(string Address)
-        {
-			UriBuilder.Path = Constants.Api.GetAccountPublickey;
-			return HttpClient.GetJsonAsync<PublicKeyResponse>(UriBuilder.ToString());
-        }
-
-        public AccountResponse Open(string Secret)
-        {
-            return OpenAsync(Secret).GetAwaiter().GetResult();
-        }
-
-        public Task<AccountResponse> OpenAsync(string Secret)
-        {
-			UriBuilder.Path = Constants.Api.PostAccountOpen;
-            return HttpClient.PostJsonAsync<string, AccountResponse>(UriBuilder.ToString(), Secret);
-        }
+        public Task<AccountResponse> OpenAsync(OpenAccountRequest Secret)
+            => PostSimpleJsonAsync<AccountResponse, OpenAccountRequest>(Secret, Api.PostAccountOpen);
 
         public object PutDelegates(PutDelegatesRequest Request)
-        {
-            throw new NotImplementedException();
-        }
+            => PutDelegatesAsync(Request).GetAwaiter().GetResult();
 
         public Task<object> PutDelegatesAsync(PutDelegatesRequest Request)
-        {
-            throw new NotImplementedException();
-        }
+            => PutSimpleJsonAsync<object, PutDelegatesRequest>(Request, Api.PutAccountDelegateAdd);
     }
 }

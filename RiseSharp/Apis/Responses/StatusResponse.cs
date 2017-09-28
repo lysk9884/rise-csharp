@@ -2,10 +2,10 @@
 using System.Runtime.Serialization;
 using RiseSharp.Apis.Responses.Base;
 
-namespace RiseSharp.Models
+namespace RiseSharp.Apis.Responses
 {
     [DataContract]
-    public class BlockStatusResponse : BaseApiResponse
+    public class StatusResponse : BaseApiResponse
     {
         [DataMember(Name = "broadhash")]
         public string BroadHash { get; set; }

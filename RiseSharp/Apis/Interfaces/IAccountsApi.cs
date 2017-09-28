@@ -4,7 +4,7 @@ using RiseSharp.Apis.Requests;
 using RiseSharp.Apis.Responses;
 using RiseSharp.Models;
 
-namespace RiseSharp.Interfaces.Apis
+namespace RiseSharp.Apis.Interfaces
 {
     public interface IAccountsApi
     {
@@ -13,98 +13,98 @@ namespace RiseSharp.Interfaces.Apis
 		/// </summary>
 		/// <returns>AccountResponse</returns>
 		/// <param name="Secret">secret the string to use to generate the new account</param>
-		AccountResponse Open(string Secret);
+        AccountResponse Open(OpenAccountRequest Secret);
 
 		/// <summary>
 		/// Opens a new account using the specified secrect string asynchronously
 		/// </summary>
 		/// <returns>Task<AccountResponse></returns>
 		/// <param name="Secret">secret the string to use to generate the new account</param>
-		Task<AccountResponse> OpenAsync(string Secret);
+        Task<AccountResponse> OpenAsync(OpenAccountRequest Secret);
 
 		/// <summary>
 		/// Returns balance and unconfirmed balance for the specified address
 		/// </summary>
 		/// <returns>BalanceResponse</returns>
 		/// <param name="Address">address to check</param>
-		BalanceResponse GetBalance(string Address);
+        BalanceResponse GetBalance(GetBalanceRequest Address);
 
 		/// <summary>
 		/// Returns balance and unconfirmed balance for the specified address asynchronously
 		/// </summary>
 		/// <returns>Task<BalanceResponse></returns>
 		/// <param name="Address">address to check</param>
-		Task<BalanceResponse> GetBalanceAsync(string Address);
+		Task<BalanceResponse> GetBalanceAsync(GetBalanceRequest Address);
 
 		/// <summary>
 		/// Returns the address public key
 		/// </summary>
 		/// <returns>PublicKeyResponse</returns>
 		/// <param name="Address">address to check</param>
-		PublicKeyResponse GetPublicKey(string Address);
+		PublicKeyResponse GetPublicKey(GetPublicKeyRequest Address);
 
 		/// <summary>
 		/// Returns the address public key asynchronously
 		/// </summary>
 		/// <returns>Task<PublicKeyResponse></returns>
 		/// <param name="Address">address to check</param>
-		Task<PublicKeyResponse> GetPublicKeyAsync(string Address);
+		Task<PublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest Address);
 
 		/// <summary>
 		/// Generates the public key.
 		/// </summary>
 		/// <returns>PublicKeyResponse</returns>
 		/// <param name="Secret">secret the secret to use</param>
-		PublicKeyResponse GeneratePublicKey(string Secret);
+        PublicKeyResponse GeneratePublicKey(GeneratePublicKeyRequest Secret);
 
 		/// <summary>
 		/// Generates the public key asynchronously
 		/// </summary>
 		/// <returns>Task<PublicKeyResponse></returns>
 		/// <param name="Secret">secret the secret to use</param>
-		Task<PublicKeyResponse> GeneratePublicKeyAsync(string Secret);
+        Task<PublicKeyResponse> GeneratePublicKeyAsync(GeneratePublicKeyRequest Secret);
 
 		/// <summary>
 		/// Get Account information by its address
 		/// </summary>
 		/// <returns>AccountResponse</returns>
 		/// <param name="Address">Address</param>
-		AccountResponse GetAccount(string Address);
+        AccountResponse GetAccount(GetAccountRequest Address);
 
 		/// <summary>
 		/// Get Account information by its address asynchronously
 		/// </summary>
 		/// <returns>Task<AccountResponse></returns>
 		/// <param name="Address">Address</param>
-		Task<AccountResponse> GetAccountAsync(string Address);
+        Task<AccountResponse> GetAccountAsync(GetAccountRequest Address);
 
 		/// <summary>
 		/// Get Account information by its publicKey
 		/// </summary>
 		/// <returns>AccountResponse</returns>
 		/// <param name="PublicKey">Public key</param>
-		AccountResponse GetAccountByPublicKey(string PublicKey);
+        AccountResponse GetAccountByPublicKey(GetAccountByPublicKeyRequest PublicKey);
 
 		/// <summary>
 		/// Get Account information by its publicKey asynchronously
 		/// </summary>
 		/// <returns>AccountResponse</returns>
 		/// <param name="PublicKey">Public key</param>
-		Task<AccountResponse> GetAccountByPublicKeyAsync(string PublicKey);
+        Task<AccountResponse> GetAccountByPublicKeyAsync(GetAccountByPublicKeyRequest PublicKey);
 
 		/// <summary>
 		/// Return accounts delegates by using the given address
 		/// </summary>
 		/// <returns>DelegatesResponse</returns>
 		/// <param name="Address">Address</param>
-		DelegatesResponse GetDelegates(string Address);
+        DelegatesResponse GetDelegates(GetDelegatesRequest Address);
 
 		/// <summary>
 		/// Return accounts delegates by using the given address asynchronously
 		/// </summary>
 		/// <returns>Task<DelegatesResponse></returns>
 		/// <param name="Address">Address</param>
-		Task<DelegatesResponse> GetDelegatesAsync(string Address);
+        Task<DelegatesResponse> GetDelegatesAsync(GetDelegatesRequest Address);
 
 		/// <summary>
 		/// Cast votes. The delegates array must use delegate Public Key prepended witha "+" or "-" sign wether you want to up/downvote the delegate
