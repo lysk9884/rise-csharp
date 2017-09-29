@@ -17,6 +17,7 @@
     <Folder Include="Apis\Attributes\" />
     <Folder Include="Apis\Constants\" />
     <Folder Include="Apis\Base\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
@@ -25,5 +26,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Apis\Requests\GetFeeScheduleRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chaos.NaCl.PCL\Chaos.NaCl.PCL.csproj" />
   </ItemGroup>
 </Project>

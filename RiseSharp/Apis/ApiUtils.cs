@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Linq;
+using RiseSharp.Apis.Requests.Base;
+using RiseSharp.Apis.Responses.Base;
 
 namespace RiseSharp.Apis
 {
@@ -23,15 +25,15 @@ namespace RiseSharp.Apis
 			return default(T);
 		}
 
-		public static async Task PostJsonAsync<T>(this HttpClient client, string url, T req)
+        public static async Task PostJsonAsync<T>(this HttpClient client, string url, T req) where T : BaseApiRequest
 		{
-			var result = await client.PostAsync(url, new StringContent(req.ToString(), Encoding.UTF8, "application/json"));
+			var result = await client.PostAsync(url, new FormUrlEncodedContent(req.ToKeyValue()));
 			result.EnsureSuccessStatusCode();
 		}
 
-		public static async Task<T2> PostJsonAsync<T1, T2>(this HttpClient client, string url, T1 req)
+        public static async Task<T2> PostJsonAsync<T1, T2>(this HttpClient client, string url, T1 req) where T1 : BaseApiRequest
 		{
-			var result = await client.PostAsync(url, new StringContent(req.ToString(), Encoding.UTF8, "application/json"));
+            var result = await client.PostAsync(url, new FormUrlEncodedContent(req.ToKeyValue()));
 			result.EnsureSuccessStatusCode();
 			if (result.Content != null)
 			{
@@ -41,15 +43,15 @@ namespace RiseSharp.Apis
 			return default(T2);
 		}
 
-		public static async Task PutJsonAsync<T>(this HttpClient client, string url, T req)
+		public static async Task PutJsonAsync<T>(this HttpClient client, string url, T req) where T : BaseApiRequest
 		{
-			var result = await client.PutAsync(url, new StringContent(req.ToString(), Encoding.UTF8, "application/json"));
+			var result = await client.PutAsync(url, new FormUrlEncodedContent(req.ToKeyValue()));
 			result.EnsureSuccessStatusCode();
 		}
 
-		public static async Task<T2> PutJsonAsync<T1, T2>(this HttpClient client, string url, T1 req)
+        public static async Task<T2> PutJsonAsync<T1, T2>(this HttpClient client, string url, T1 req) where T1 : BaseApiRequest
 		{
-			var result = await client.PutAsync(url, new StringContent(req.ToString(), Encoding.UTF8, "application/json"));
+			var result = await client.PutAsync(url, new FormUrlEncodedContent(req.ToKeyValue())); // new StringContent(req.ToString(), Encoding.UTF8, "application/json")
 			result.EnsureSuccessStatusCode();
 			if (result.Content != null)
 			{

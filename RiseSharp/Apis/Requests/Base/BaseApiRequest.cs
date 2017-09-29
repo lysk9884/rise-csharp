@@ -45,6 +45,29 @@ namespace RiseSharp.Apis.Requests.Base
 			return string.Join("&", QueryParams.ToArray());
 		}
 
+        public virtual Dictionary<string, string> ToKeyValue()
+		{
+			var propCollection = GetType().GetRuntimeProperties();
+
+            Dictionary<string, string> result = new Dictionary<string, string>();
+
+			foreach (PropertyInfo property in propCollection)
+			{
+				foreach (var attribute in property.GetCustomAttributes(true))
+				{
+					var attr = attribute as QueryParamAttribute;
+					if (attr != null)
+					{
+						var val = property.GetValue(this);
+						if (val != null)
+                            result.Add(attr.Name, val.ToString());
+					}
+				}
+			}
+
+            return result;
+		}
+
 		public IEnumerable<HeaderValue> GetHeaderValues()
 		{
 			var headerValues = new List<HeaderValue>();

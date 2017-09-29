@@ -13,6 +13,7 @@ namespace RiseSharp.Apis.Constants
         public const string ToggleForging = "/api/delegates/forging/{0}"; //disable | enable
         public const string GetForgingStatus = "/api/delegates/forging/status";
         public const string GetNextForgers = "api/delegates/getNextForgers";
+        public const string GetTransactionsCount = "/api/transactions/count";
 
         #endregion
 

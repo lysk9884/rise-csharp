@@ -7,9 +7,9 @@ namespace RiseSharp.Apis.Constants
 		public const string Http = "http";
 
 		public const string DefaultHost = "wallet.rise.vision";
-		public const string DefaultHostIp = "161.202.112.35";
+		public const string DefaultHostIp = "192.168.3.116";
 
-		public const int DefaultPort = 8000;
+		public const int DefaultPort = 5555;
 
 		public const bool UseHttps = true;
     }
