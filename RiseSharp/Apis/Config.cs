@@ -14,15 +14,15 @@ namespace RiseSharp.Apis
         /// </summary>
         public Config()
         {
-			Scheme = ApiParams.Https;
+			Scheme = ApiParams.Http;
 		    Host = ApiParams.DefaultHostIp;
 		    Port = ApiParams.DefaultPort;
         }
 
-        public Config(string Scheme, string Host, int Port)
+        public Config(string Scheme, bool UseHttps, int Port)
         {
-            this.Scheme = !string.IsNullOrWhiteSpace(Scheme)? Scheme : ApiParams.Https;
-            this.Host = !string.IsNullOrWhiteSpace(Host) ? Host : ApiParams.DefaultHostIp;
+            this.Scheme = !string.IsNullOrWhiteSpace(Scheme)? Scheme : ApiParams.Http;
+            this.Host = UseHttps ? ApiParams.Https : ApiParams.Http;
             this.Port = Port > 0 ? Port : ApiParams.DefaultPort;
         }
     }
