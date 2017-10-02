@@ -14,6 +14,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RiseSharp\RiseSharp.csproj" />
-    <ProjectReference Include="..\Chaos.NaCl.PCL\Chaos.NaCl.PCL.csproj" />
   </ItemGroup>
 </Project>

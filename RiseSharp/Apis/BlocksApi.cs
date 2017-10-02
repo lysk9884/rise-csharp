@@ -10,6 +10,10 @@ namespace RiseSharp.Apis
 {
     public class BlocksApi : BaseApi, IBlocksApi
     {
+        public BlocksApi():base(){ }
+
+        public BlocksApi(Config NetworkConfig):base(NetworkConfig){ }
+
         public GetBlockResponse GetBlock(GetBlockRequest BlockRequest)
             => GetBlockAsync(BlockRequest).GetAwaiter().GetResult();
 

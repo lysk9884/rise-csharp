@@ -14,6 +14,7 @@ namespace RiseSharp.Apis.Constants
         public const string GetForgingStatus = "/api/delegates/forging/status";
         public const string GetNextForgers = "api/delegates/getNextForgers";
         public const string GetTransactionsCount = "/api/transactions/count";
+        public const string GetPeerPing = "/peer/ping";
 
         #endregion
 

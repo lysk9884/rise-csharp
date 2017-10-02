@@ -11,6 +11,10 @@ namespace RiseSharp.Apis
 {
     public class DelegatesApi : BaseApi, IDelegatesApi
     {
+        public DelegatesApi():base(){ }
+
+        public DelegatesApi(Config NetworkConfig):base(NetworkConfig){ }
+
         public Transaction<Models.Delegate> Enable(DelegatesEnableRequest Request)
             => EnableAsync(Request).GetAwaiter().GetResult();
         

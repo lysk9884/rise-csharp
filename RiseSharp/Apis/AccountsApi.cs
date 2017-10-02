@@ -4,12 +4,15 @@ using RiseSharp.Apis.Constants;
 using RiseSharp.Apis.Interfaces;
 using RiseSharp.Apis.Requests;
 using RiseSharp.Apis.Responses;
-using RiseSharp.Apis.Responses.Base;
 
 namespace RiseSharp.Apis
 {
     public class AccountsApi : BaseApi, IAccountsApi
     {
+        public AccountsApi():base(){}
+
+        public AccountsApi(Config NetworkConfig):base(NetworkConfig){}
+
         public PublicKeyResponse GeneratePublicKey(GeneratePublicKeyRequest Secret)
             => GeneratePublicKeyAsync(Secret).GetAwaiter().GetResult();
 
@@ -56,6 +59,6 @@ namespace RiseSharp.Apis
             => PutDelegatesAsync(Request).GetAwaiter().GetResult();
 
         public Task<object> PutDelegatesAsync(PutDelegatesRequest Request)
-        => PutSimpleJsonAsync<object, PutDelegatesRequest>(Request, Api.PutAccountDelegateAdd);
+            => PutSimpleJsonAsync<object, PutDelegatesRequest>(Request, Api.PutAccountDelegateAdd);
     }
 }

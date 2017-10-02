@@ -10,6 +10,10 @@ namespace RiseSharp.Apis
 {
     public class TransactionsApi : BaseApi, ITransactionsApi
     {
+        public TransactionsApi():base(){ }
+
+        public TransactionsApi(Config NetworkConfig):base(NetworkConfig){ }
+
         public TransactionsCountResponse GetCount()
             => GetCountAsync().GetAwaiter().GetResult();
 

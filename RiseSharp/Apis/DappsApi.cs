@@ -9,6 +9,10 @@ namespace RiseSharp.Apis
 {
     public class DappsApi : BaseApi, IDappsApi
     {
+        public DappsApi():base(){ }
+
+        public DappsApi(Config NetworkConfig):base(NetworkConfig){ }
+
         public GetDappCategoriesResponse GetCategories()
             => GetCategoriesAsync().GetAwaiter().GetResult();
 
