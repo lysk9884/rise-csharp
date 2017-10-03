@@ -34,8 +34,12 @@ namespace RiseSharp.Apis.Base
 			{
 				Host = NetworkConfig.Host,
 				Scheme = NetworkConfig.Scheme,
-				Port = NetworkConfig.Port
 			};
+
+            if (NetworkConfig.Port.HasValue)
+            {
+                UriBuilder.Port = NetworkConfig.Port.Value;
+            }
         }
 
         protected virtual void ResetBuilder()
@@ -83,7 +87,6 @@ namespace RiseSharp.Apis.Base
 		{
 			ResetBuilder();
 			UriBuilder.Path = Path;
-            UriBuilder.Query = Request.ToQuery();
             return HttpClient.PostJsonAsync<R, T>(UriBuilder.ToString(), Request);
 		}
 	}

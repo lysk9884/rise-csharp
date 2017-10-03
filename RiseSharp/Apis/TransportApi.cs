@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using RiseSharp.Apis.Base;
 using RiseSharp.Apis.Constants;
 using RiseSharp.Apis.Headers;

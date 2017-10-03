@@ -7,23 +7,26 @@ namespace RiseSharp.Apis
     {
         public string Scheme { get; private set; }
         public string Host{ get; private set; }
-        public int Port{ get; private set; }
+        public int? Port { get; private set; } = null;
 
         /// <summary>
         /// Default constructor with constant parameters
         /// </summary>
         public Config()
         {
-			Scheme = ApiParams.Http;
+            Scheme = ApiParams.DefaultScheme;
 		    Host = ApiParams.DefaultHostIp;
 		    Port = ApiParams.DefaultPort;
         }
 
-        public Config(string Scheme, bool UseHttps, int Port)
+        public Config(string Host, bool UseHttps, int? Port)
         {
-            this.Scheme = !string.IsNullOrWhiteSpace(Scheme)? Scheme : ApiParams.Http;
-            this.Host = UseHttps ? ApiParams.Https : ApiParams.Http;
-            this.Port = Port > 0 ? Port : ApiParams.DefaultPort;
+            this.Scheme = UseHttps? ApiParams.Https: ApiParams.Http;
+            this.Host = !string.IsNullOrWhiteSpace(Host) ? Host : ApiParams.DefaultHostIp;
+            if (Port != null)
+            {
+                this.Port = Port > 0 ? Port : ApiParams.DefaultPort;
+            }
         }
     }
 }
