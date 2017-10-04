@@ -62,7 +62,7 @@ namespace RiseSharp.Tests
                 }
             });
 
-            Assert.True(response != null);
+            Assert.True(response.Success);
         }
 
 		[Fact]
@@ -78,7 +78,7 @@ namespace RiseSharp.Tests
                 }
 			});
 
-			Assert.True(response != null);
+            Assert.True(response.Success);
 		}
 
         [Fact]
@@ -91,7 +91,7 @@ namespace RiseSharp.Tests
                 }
             });
 
-            Assert.True(response != null);
+            Assert.True(response.Success);
         }
 
 		[Fact]
@@ -108,7 +108,7 @@ namespace RiseSharp.Tests
                 } .ToArray()
 			});
 
-			Assert.True(response != null);
+            Assert.True(response.Success);
 		}
     }
 }

@@ -33,28 +33,28 @@ namespace RiseSharp.Apis
         public Task<BaseApiResponse> PingAsync(TransportHeaders Request)
             => GetSimpleJsonAsync<BaseApiResponse, TransportHeaders>(Request, Api.GetPeerPing);
 
-        public object PostSignature(PostSignatureRequest Request)
+        public BaseApiResponse PostSignature(PostSignatureRequest Request)
             => PostSignatureAsync(Request).GetAwaiter().GetResult();
 
-        public Task<object> PostSignatureAsync(PostSignatureRequest Request)
-            => PostSimpleJsonAsync<object, PostSignatureRequest>(Request, Api.PeerGetSignatures);
+        public Task<BaseApiResponse> PostSignatureAsync(PostSignatureRequest Request)
+            => PostSimpleJsonAsync<BaseApiResponse, PostSignatureRequest>(Request, Api.PeerGetSignatures);
 
-        public object PostSignatures(PostSignaturesRequest Request)
+        public BaseApiResponse PostSignatures(PostSignaturesRequest Request)
             => PostSignaturesAsync(Request).GetAwaiter().GetResult();
 
-        public Task<object> PostSignaturesAsync(PostSignaturesRequest Request)
-            => PostSimpleJsonAsync<object, PostSignaturesRequest>(Request, Api.PeerGetSignatures);
+        public Task<BaseApiResponse> PostSignaturesAsync(PostSignaturesRequest Request)
+            => PostSimpleJsonAsync<BaseApiResponse, PostSignaturesRequest>(Request, Api.PeerGetSignatures);
 
-        public object PostTransaction<T>(PostTransactionRequest<T> Request)
+        public BaseApiResponse PostTransaction<T>(PostTransactionRequest<T> Request)
             => PostTransactionAsync(Request).GetAwaiter().GetResult();
 
-        public Task<object> PostTransactionAsync<T>(PostTransactionRequest<T> Request)
-            => PostSimpleJsonAsync<object, PostTransactionRequest<T>>(Request, Api.PeerPostTransactions);
+        public Task<BaseApiResponse> PostTransactionAsync<T>(PostTransactionRequest<T> Request)
+            => PostSimpleJsonAsync<BaseApiResponse, PostTransactionRequest<T>>(Request, Api.PeerPostTransactions);
 
-        public object PostTransactions<T>(PostTransactionsRequest<T> Request)
+        public BaseApiResponse PostTransactions<T>(PostTransactionsRequest<T> Request)
 			=> PostTransactionsAsync(Request).GetAwaiter().GetResult();
 
-        public Task<object> PostTransactionsAsync<T>(PostTransactionsRequest<T> Request)
-			=> PostSimpleJsonAsync<object, PostTransactionsRequest<T>>(Request, Api.PeerPostTransactions);
+        public Task<BaseApiResponse> PostTransactionsAsync<T>(PostTransactionsRequest<T> Request)
+			=> PostSimpleJsonAsync<BaseApiResponse, PostTransactionsRequest<T>>(Request, Api.PeerPostTransactions);
     }
 }

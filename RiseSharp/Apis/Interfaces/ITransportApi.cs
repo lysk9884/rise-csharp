@@ -56,7 +56,7 @@ namespace RiseSharp.Apis.Interfaces
         /// <returns>The transaction.</returns>
         /// <param name="Request">Request.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        object PostTransaction<T>(PostTransactionRequest<T> Request);
+        BaseApiResponse PostTransaction<T>(PostTransactionRequest<T> Request);
 
         /// <summary>
         /// Posts the transaction async.
@@ -64,7 +64,7 @@ namespace RiseSharp.Apis.Interfaces
         /// <returns>The transaction async.</returns>
         /// <param name="Request">Request.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        Task<object> PostTransactionAsync<T>(PostTransactionRequest<T> Request);
+        Task<BaseApiResponse> PostTransactionAsync<T>(PostTransactionRequest<T> Request);
 
         /// <summary>
         /// Posts the transactions.
@@ -72,7 +72,7 @@ namespace RiseSharp.Apis.Interfaces
         /// <returns>The transactions.</returns>
         /// <param name="Request">Request.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-		object PostTransactions<T>(PostTransactionsRequest<T> Request);
+		BaseApiResponse PostTransactions<T>(PostTransactionsRequest<T> Request);
 
         /// <summary>
         /// Posts the transactions async.
@@ -80,34 +80,34 @@ namespace RiseSharp.Apis.Interfaces
         /// <returns>The transactions async.</returns>
         /// <param name="Request">Request.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-		Task<object> PostTransactionsAsync<T>(PostTransactionsRequest<T> Request);
+		Task<BaseApiResponse> PostTransactionsAsync<T>(PostTransactionsRequest<T> Request);
 
         /// <summary>
         /// Posts the signature.
         /// </summary>
         /// <returns>The signature.</returns>
         /// <param name="Request">Request.</param>
-        object PostSignature(PostSignatureRequest Request);
+        BaseApiResponse PostSignature(PostSignatureRequest Request);
 
         /// <summary>
         /// Posts the signature async.
         /// </summary>
         /// <returns>The signature async.</returns>
         /// <param name="Request">Request.</param>
-        Task<object> PostSignatureAsync(PostSignatureRequest Request);
+        Task<BaseApiResponse> PostSignatureAsync(PostSignatureRequest Request);
 
         /// <summary>
         /// Posts the signatures.
         /// </summary>
         /// <returns>The signatures.</returns>
         /// <param name="Request">Request.</param>
-		object PostSignatures(PostSignaturesRequest Request);
+		BaseApiResponse PostSignatures(PostSignaturesRequest Request);
 
         /// <summary>
         /// Posts the signatures async.
         /// </summary>
         /// <returns>The signatures async.</returns>
         /// <param name="Request">Request.</param>
-		Task<object> PostSignaturesAsync(PostSignaturesRequest Request);
+		Task<BaseApiResponse> PostSignaturesAsync(PostSignaturesRequest Request);
     }
 }
