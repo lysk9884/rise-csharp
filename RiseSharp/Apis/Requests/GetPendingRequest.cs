@@ -7,6 +7,6 @@ namespace RiseSharp.Apis.Requests
     public class GetPendingRequest : BaseApiRequest
     {
         [QueryParam(Name = "publicKey")]
-        public string Publickey { get; set; }
+        public string PublicKey { get; set; }
     }
 }

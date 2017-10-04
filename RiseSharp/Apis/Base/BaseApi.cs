@@ -29,6 +29,7 @@ namespace RiseSharp.Apis.Base
 
         private void InitApi(){
 			HttpClient = new HttpClient();
+            HttpClient.Timeout = TimeSpan.FromSeconds(5);
 
 			UriBuilder = new UriBuilder
 			{

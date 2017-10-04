@@ -15,7 +15,7 @@ namespace RiseSharp.Apis.Requests
 		[QueryParam(Name = "min")]
         public decimal Min { get; set; }
 
-		[QueryParam(Name = "publicKeys")]
+		[QueryParam(Name = "keysgroup")]
 		public string[] PublicKeys { get; set; }
     }
 }

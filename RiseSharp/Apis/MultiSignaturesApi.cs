@@ -4,6 +4,7 @@ using RiseSharp.Apis.Base;
 using RiseSharp.Apis.Constants;
 using RiseSharp.Apis.Interfaces;
 using RiseSharp.Apis.Requests;
+using RiseSharp.Apis.Responses;
 
 namespace RiseSharp.Apis
 {
@@ -19,32 +20,22 @@ namespace RiseSharp.Apis
         public Task<object> CreateMultiSigAccountAsync(CreateMultiSigAccountRequest Request)
             => PutSimpleJsonAsync<object, CreateMultiSigAccountRequest>(Request, Api.PutMultiSignaturesAdd);
 
-        public object GetAccounts(GetAccountByPublicKeyRequest Request)
+        public GetAccountsResponse GetAccounts(GetAccountByPublicKeyRequest Request)
             => GetAccountsAsync(Request).GetAwaiter().GetResult();
 
-        public Task<object> GetAccountsAsync(GetAccountByPublicKeyRequest Request)
-            =>GetSimpleJsonAsync<object, GetAccountByPublicKeyRequest>(Request, Api.GetMultiSignaturesAccounts);
+        public Task<GetAccountsResponse> GetAccountsAsync(GetAccountByPublicKeyRequest Request)
+            =>GetSimpleJsonAsync<GetAccountsResponse, GetAccountByPublicKeyRequest>(Request, Api.GetMultiSignaturesAccounts);
 
-        public object GetPending(GetPendingRequest Request)
-            => GetPendingAsync(Request).GetAwaiter().GetResult();
+        public TransactionsResponse<T> GetPending<T>(GetPendingRequest Request)
+            => GetPendingAsync<T>(Request).GetAwaiter().GetResult();
 
-        public Task<object> GetPendingAsync(GetPendingRequest Request)
-            => GetSimpleJsonAsync<object, GetPendingRequest>(Request, Api.GetMultiSignaturesPending);
+        public Task<TransactionsResponse<T>> GetPendingAsync<T>(GetPendingRequest Request)
+            => GetSimpleJsonAsync<TransactionsResponse<T>, GetPendingRequest>(Request, Api.GetMultiSignaturesPending);
 
-        public object Sign(MultiSigSignRequest Request)
+        public MultiSignaturesSignResponse Sign(MultiSigSignRequest Request)
             => SignAsync(Request).GetAwaiter().GetResult();
 
-        public Task<object> SignAsync(MultiSigSignRequest Request)
-            => PostSimpleJsonAsync<object, MultiSigSignRequest>(Request, Api.PostMultiSignaturesSign);
-
-		//public object GetMultisignatures(GetMultiSignaturesRequest Request)
-		//{
-		//    throw new NotImplementedException();
-		//}
-
-		//public Task<object> GetMultisignaturesAsync(GetMultiSignaturesRequest Request)
-		//{
-		//    throw new NotImplementedException();
-		//}
+        public Task<MultiSignaturesSignResponse> SignAsync(MultiSigSignRequest Request)
+            => PostSimpleJsonAsync<MultiSignaturesSignResponse, MultiSigSignRequest>(Request, Api.PostMultiSignaturesSign);
 	}
 }

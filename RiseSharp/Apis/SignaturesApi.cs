@@ -4,6 +4,7 @@ using RiseSharp.Apis.Base;
 using RiseSharp.Apis.Constants;
 using RiseSharp.Apis.Interfaces;
 using RiseSharp.Apis.Requests;
+using RiseSharp.Apis.Responses;
 
 namespace RiseSharp.Apis
 {
@@ -13,10 +14,10 @@ namespace RiseSharp.Apis
 
         public SignaturesApi(Config NetworkConfig):base(NetworkConfig){ }
 
-        public object Add(AddSignaturesRequest Request)
-            => AddAsync(Request).GetAwaiter().GetResult();
+        public GetTransactionResponse<T> Add<T>(AddSignaturesRequest Request)
+            => AddAsync<T>(Request).GetAwaiter().GetResult();
 
-        public Task<object> AddAsync(AddSignaturesRequest Request)
-            => PutSimpleJsonAsync<object, AddSignaturesRequest>(Request, Api.PutSignatureAdd);
+        public Task<GetTransactionResponse<T>> AddAsync<T>(AddSignaturesRequest Request)
+            => PutSimpleJsonAsync<GetTransactionResponse<T>, AddSignaturesRequest>(Request, Api.PutSignatureAdd);
     }
 }

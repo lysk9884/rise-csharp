@@ -27,14 +27,14 @@ namespace RiseSharp.Apis.Interfaces
         /// </summary>
         /// <returns>The peers list.</returns>
         /// <param name="Request">Request.</param>
-        PeersGetListRequest GetPeersList(TransportHeaders Request);
+        PeersGetListResponse GetPeersList(TransportHeaders Request);
 
         /// <summary>
         /// Gets the peers list async.
         /// </summary>
         /// <returns>The peers list async.</returns>
         /// <param name="Request">Request.</param>
-        Task<PeersGetListRequest> GetPeersListAsync(TransportHeaders Request);
+        Task<PeersGetListResponse> GetPeersListAsync(TransportHeaders Request);
 
         /// <summary>
         /// Ping the specified Request.

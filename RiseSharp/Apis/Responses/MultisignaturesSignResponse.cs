@@ -5,9 +5,9 @@ using RiseSharp.Apis.Responses.Base;
 namespace RiseSharp.Apis.Responses
 {
     [DataContract]
-    public class GetPeerHeightResponse : BaseApiResponse
+    public class MultiSignaturesSignResponse : BaseApiResponse
     {
-        [DataMember(Name = "height")]
-        public long Height { get; set; }
+        [DataMember(Name = "transactionId")]
+        public string TransactionId { get; set; }
     }
 }

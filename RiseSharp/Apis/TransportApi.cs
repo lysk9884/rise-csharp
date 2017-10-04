@@ -21,11 +21,11 @@ namespace RiseSharp.Apis
         public Task<GetPeerHeightResponse> GetPeerHeightAsync(TransportHeaders Request)
             => GetSimpleJsonAsync<GetPeerHeightResponse, TransportHeaders>(Request, Api.PeerGetHeight);
 
-        public PeersGetListRequest GetPeersList(TransportHeaders Request)
+        public PeersGetListResponse GetPeersList(TransportHeaders Request)
             => GetPeersListAsync(Request).GetAwaiter().GetResult();
 
-        public Task<PeersGetListRequest> GetPeersListAsync(TransportHeaders Request)
-            => GetSimpleJsonAsync<PeersGetListRequest, TransportHeaders>(Request, Api.PeerGetList);
+        public Task<PeersGetListResponse> GetPeersListAsync(TransportHeaders Request)
+            => GetSimpleJsonAsync<PeersGetListResponse, TransportHeaders>(Request, Api.PeerGetList);
 
         public BaseApiResponse Ping(TransportHeaders Request)
             => PingAsync(Request).GetAwaiter().GetResult();

@@ -8,6 +8,6 @@ namespace RiseSharp.Apis.Requests
 	public class PostTransactionsRequest<T> : TransportHeaders
 	{
 		[QueryParam(Name = "transactions")]
-		public Transaction<T>[] Transaction { get; set; }
+		public Transaction<T>[] Transactions { get; set; }
 	}
 }
