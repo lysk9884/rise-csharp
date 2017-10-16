@@ -11,10 +11,10 @@ namespace RiseSharp.Models
 		public string IpAddress { get; set; }
 
 		[DataMember(Name = "port")]
-		public int Port { get; set; }
+		public int? Port { get; set; }
 
 		[DataMember(Name = "state")]
-		public PeerState State { get; set; }
+		public PeerState? State { get; set; }
 
 		[DataMember(Name = "os")]
 		public string Os { get; set; }
@@ -29,13 +29,13 @@ namespace RiseSharp.Models
 		public string Broadhash { get; set; }
 
 		[DataMember(Name = "height")]
-        public decimal Height { get; set; }
+        public decimal? Height { get; set; }
 
 		[DataMember(Name = "clock")]
 		public string Clock { get; set; }
 
 		[DataMember(Name = "updated")]
-        public decimal Updated { get; set; }
+        public decimal? Updated { get; set; }
 
 		[DataMember(Name = "nonce")]
         public string Nonce { get; set; }

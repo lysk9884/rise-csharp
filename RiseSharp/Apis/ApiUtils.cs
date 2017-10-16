@@ -15,7 +15,8 @@ namespace RiseSharp.Apis
     {
         public static async Task<T> GetJsonAsync<T>(this HttpClient client, string url)
 		{
-			var result = await client.GetAsync(url);
+
+            var result = await client.GetAsync(url);
 			result.EnsureSuccessStatusCode();
 			if (result.Content != null)
 			{

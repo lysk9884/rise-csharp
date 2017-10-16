@@ -2,11 +2,13 @@ using System;
 using RiseSharp.Apis;
 using RiseSharp.Apis.Constants;
 using RiseSharp.Models;
+using RiseSharp.Tests.Attrs;
 using RiseSharp.Utils;
 using Xunit;
 
 namespace RiseSharp.Tests
 {
+    [TestCaseOrderer("RiseSharp.Tests.Attrs.PriorityOrderer", "RiseSharp.Tests")]
     public class AccountApiTests
     {
 
@@ -16,7 +18,7 @@ namespace RiseSharp.Tests
 
         AccountsApi api = new AccountsApi(new Config(ApiParams.DefaultHost, true, null));
 
-        [Fact]
+        [Fact, TestPriority(32)]
 		public void TestGenerateSecret()
 		{
 			var code = CryptoUtils.GenerateSecret();
@@ -24,7 +26,7 @@ namespace RiseSharp.Tests
 			Assert.True(code.Split(" ".ToCharArray()).Length == 12, "BIP39 Mneumonic code must contain 12 words.");
 		}
 
-        [Fact]
+        [Fact, TestPriority(0)]
         public void GeneratePublicKey()
         {
             var response = api.GeneratePublicKey(new Apis.Requests.GeneratePublicKeyRequest
@@ -35,7 +37,7 @@ namespace RiseSharp.Tests
             Assert.True(response.Success);
         }
 
-        [Fact]
+        [Fact, TestPriority(1)]
         public void OpenAccount(){
             var response = api.Open(new Apis.Requests.OpenAccountRequest
             {
@@ -46,7 +48,7 @@ namespace RiseSharp.Tests
             Assert.True(response.Success);
         }
 
-        [Fact]
+        [Fact, TestPriority(2)]
         public void GetAccount(){
             string _Address = _liveAddress;
             var response = api.GetAccount(new Apis.Requests.GetAccountRequest
@@ -58,7 +60,7 @@ namespace RiseSharp.Tests
 			Assert.True(response.Success);
         }
 
-        [Fact]
+        [Fact, TestPriority(3)]
         public void GetAccountByPublicKey(){
             string _PublicKey = _livePubKey;
             var response = api.GetAccountByPublicKey(new Apis.Requests.GetAccountByPublicKeyRequest
@@ -70,7 +72,7 @@ namespace RiseSharp.Tests
 			Assert.True(response.Success);
         }
 
-        [Fact]
+        [Fact, TestPriority(4)]
         public void GetBalance(){
             string _Address = _liveAddress;
             var response = api.GetBalance(new Apis.Requests.GetBalanceRequest 
@@ -82,7 +84,7 @@ namespace RiseSharp.Tests
             Assert.True(response.Success);
         }
 
-        [Fact]
+        [Fact, TestPriority(5)]
         public void GetDelegates(){
             string _Address = _liveAddress;
             var response = api.GetDelegates(new Apis.Requests.GetDelegatesRequest
@@ -93,7 +95,7 @@ namespace RiseSharp.Tests
             Assert.True(response.Success);
         }
 
-        [Fact]
+        [Fact, TestPriority(6)]
         public void GetPublicKey(){
             string _Address = _liveAddress;
             var response = api.GetPublicKey(new Apis.Requests.GetPublicKeyRequest
@@ -104,7 +106,7 @@ namespace RiseSharp.Tests
 			Assert.True(response.Success);
         }
 
-        [Fact]
+        [Fact, TestPriority(7)]
         public void PutDelegates(){ // NOT TESTED
             var response = api.PutDelegates(new Apis.Requests.PutDelegatesRequest
             {
