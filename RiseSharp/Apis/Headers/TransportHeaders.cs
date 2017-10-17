@@ -9,8 +9,8 @@ namespace RiseSharp.Apis.Headers
         [HeaderValue(Name = "nethash")]
         public string NetHash { get; set; }
 
-		[HeaderValue(Name = "port")]
-		public int Port { get; set; }
+        [HeaderValue(Name = "port")]
+        public int? Port { get; set; } = 80;
 
 		[HeaderValue(Name = "version")]
 		public string Version { get; set; }
@@ -19,10 +19,10 @@ namespace RiseSharp.Apis.Headers
 		public string BroadHash { get; set; }
 
 		[HeaderValue(Name = "Height")]
-        public decimal Height { get; set; }
+        public decimal? Height { get; set; }
 
 		[HeaderValue(Name = "nonce")]
-        public decimal Nonce { get; set; }
+        public decimal? Nonce { get; set; }
 
 		[HeaderValue(Name = "os")]
 		public string OS { get; set; }

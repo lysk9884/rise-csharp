@@ -20,7 +20,7 @@ namespace RiseSharp.Tests
         }
 
         [Fact]
-        public void GetByPublicKeyTest()
+        public void GetByPublicKeyTest() //TODO
         {
             var response = api.GetByPublicKey(new Apis.Requests.PublicKeyRequest
             {
@@ -32,7 +32,7 @@ namespace RiseSharp.Tests
         }
 
         [Fact]
-        public void GetByUserNameTest()
+        public void GetByUserNameTest() //TODO
         {
             var response = api.GetByUserName(new Apis.Requests.UserNameRequest 
             {
@@ -44,7 +44,7 @@ namespace RiseSharp.Tests
         }
 
         [Fact]
-        public void GetForgetByAccountTest()
+        public void GetForgetByAccountTest() //TODO
         {
             var response = api.GetForgetByAccount(new Apis.Requests.ForgetByAccountRequest
             {
@@ -55,7 +55,7 @@ namespace RiseSharp.Tests
         }
 
         [Fact]
-        public void GetForgingStatusTest()
+        public void GetForgingStatusTest() //TODO
         {
             var response = api.GetForgingStatus(new Apis.Requests.GetForgingStatusRequest 
             {
@@ -97,7 +97,7 @@ namespace RiseSharp.Tests
         }
 
         [Fact]
-        public void ToggleForgingTest()
+        public void ToggleForgingTest() //TODO
         {
             var response = api.ToggleForging(new Apis.Requests.ToggleForgingRequest {
                 Secret = AccountApiTests._liveSecret

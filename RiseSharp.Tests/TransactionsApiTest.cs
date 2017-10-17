@@ -29,7 +29,7 @@ namespace RiseSharp.Tests
         }
 
         [Fact]
-        public void GetTransactionTest()
+        public void GetTransactionTest() //TODO
         {
             var response = api.GetTransaction<object>(new Apis.Requests.GetTransactionRequest {
                 Id = "transaction id"
@@ -39,7 +39,7 @@ namespace RiseSharp.Tests
         }
 
         [Fact]
-        public void GetUnconfirmedTransactionTest()
+        public void GetUnconfirmedTransactionTest() //TODO
 		{
             var response = api.GetUnconfirmedTransaction<object>(new Apis.Requests.GetTransactionRequest
 			{
@@ -58,7 +58,7 @@ namespace RiseSharp.Tests
 		}
 
         [Fact]
-        public void SendTest()
+        public void SendTest() //TODO
         {
             var response = api.Send(new Apis.Requests.SendTransactionRequest {
                 Secret = AccountApiTests._liveSecret,

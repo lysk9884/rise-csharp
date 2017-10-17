@@ -11,7 +11,7 @@ namespace RiseSharp.Tests
     {
         TransportApi api = new TransportApi(new Config(ApiParams.DefaultHost, true, null));
 
-        string _liveNetHash = "cd8171332c012514864edd8eb6f68fc3ea6cb2afbaf21c56e12751022684cea5";
+        string _liveNetHash = "e90d39ac200c495b97deb6d9700745177c7fc4aa80a404108ec820cbeced054c";
 
         string _liveVersion = "0.1.2";
 

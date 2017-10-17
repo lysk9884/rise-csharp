@@ -15,61 +15,61 @@ namespace RiseSharp.Apis
         public BlocksApi(Config NetworkConfig):base(NetworkConfig){ }
 
         public GetBlockResponse GetBlock(GetBlockRequest BlockRequest)
-            => GetBlockAsync(BlockRequest).GetAwaiter().GetResult();
+            => GetBlockAsync(BlockRequest).ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<GetBlockResponse> GetBlockAsync(GetBlockRequest BlockRequest)
             => GetSimpleJsonAsync<GetBlockResponse, GetBlockRequest>(BlockRequest, Api.GetBlocksBlock);
 
         public GetBlocksResponse GetBlocks(GetBlocksRequest Request)
-            => GetBlocksAsync(Request).GetAwaiter().GetResult();
+            => GetBlocksAsync(Request).ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<GetBlocksResponse> GetBlocksAsync(GetBlocksRequest Request)
             => GetSimpleJsonAsync<GetBlocksResponse, GetBlocksRequest>(Request, Api.GetBlocks);
 
         public FeeResponse GetFee()
-            => GetFeeAsync().GetAwaiter().GetResult();
+            => GetFeeAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<FeeResponse> GetFeeAsync()
             => GetSimpleJsonAsync<FeeResponse>(Api.GetBlocksFee);
 
         public GetFeeScheduleResponse GetFeeSchedule()
-            => GetFeeScheduleAsync().GetAwaiter().GetResult();
+            => GetFeeScheduleAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<GetFeeScheduleResponse> GetFeeScheduleAsync()
             => GetSimpleJsonAsync<GetFeeScheduleResponse>(Api.GetFeeSchedule);
 
         public HeightResponse GetHeight()
-            => GetHeightAsync().GetAwaiter().GetResult();
+            => GetHeightAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<HeightResponse> GetHeightAsync()
             => GetSimpleJsonAsync<HeightResponse>(Api.GetBlocksHeight);
 
         public MilestoneResponse GetMilestone()
-            => GetMilestoneAsync().GetAwaiter().GetResult();
+            => GetMilestoneAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<MilestoneResponse> GetMilestoneAsync()
             => GetSimpleJsonAsync<MilestoneResponse>(Api.GetBlocksMilestone);
  
         public NethashResponse GetNetHash()
-            => GetNetHashAsync().GetAwaiter().GetResult();
+            => GetNetHashAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<NethashResponse> GetNetHashAsync()
             => GetSimpleJsonAsync<NethashResponse>(Api.GetBlocksNethash);
   
         public RewardResponse GetReward()
-            => GetRewardAsync().GetAwaiter().GetResult();
+            => GetRewardAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<RewardResponse> GetRewardAsync()
             => GetSimpleJsonAsync<RewardResponse>(Api.GetBlocksReward);
   
         public StatusResponse GetStatus()
-            => GetStatusAsync().GetAwaiter().GetResult();
+            => GetStatusAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<StatusResponse> GetStatusAsync()
             => GetSimpleJsonAsync<StatusResponse>(Api.GetBlocksStatus);
         
         public SupplyResponse GetSupply()
-            => GetSupplyAsync().GetAwaiter().GetResult();
+            => GetSupplyAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<SupplyResponse> GetSupplyAsync()
             => GetSimpleJsonAsync<SupplyResponse>(Api.GetBlocksSupply);

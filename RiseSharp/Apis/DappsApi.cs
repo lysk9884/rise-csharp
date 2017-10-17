@@ -14,7 +14,7 @@ namespace RiseSharp.Apis
         public DappsApi(Config NetworkConfig):base(NetworkConfig){ }
 
         public GetDappCategoriesResponse GetCategories()
-            => GetCategoriesAsync().GetAwaiter().GetResult();
+            => GetCategoriesAsync().ConfigureAwait(false).GetAwaiter().GetResult();
 
         public Task<GetDappCategoriesResponse> GetCategoriesAsync()
             => GetSimpleJsonAsync<GetDappCategoriesResponse>(Api.GetDappsCategories);

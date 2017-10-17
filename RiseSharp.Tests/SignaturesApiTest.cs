@@ -10,7 +10,7 @@ namespace RiseSharp.Tests
         SignaturesApi api = new SignaturesApi(new Config(ApiParams.DefaultHost, true, null));
 
         [Fact]
-        public void AddTest()
+        public void AddTest() //TODO
         {
             var response = api.Add<object>(new Apis.Requests.AddSignaturesRequest 
             {

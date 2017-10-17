@@ -17,14 +17,6 @@
     <ProjectReference Include="..\RiseSharp\RiseSharp.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="DelegatesApiTest.cs" />
-    <Compile Remove="LoaderApiTests.cs" />
-    <Compile Remove="MultisignaturesApiTest.cs" />
-    <Compile Remove="SignaturesApiTest.cs" />
-    <Compile Remove="TransactionsApiTest.cs" />
-    <Compile Remove="TransportApiTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Attrs\" />
   </ItemGroup>
 </Project>
