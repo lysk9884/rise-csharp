@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using System.Linq;
 using RiseSharp.Apis.Requests.Base;
 using RiseSharp.Apis.Responses.Base;
+using RiseSharp.Utils;
 
 namespace RiseSharp.Apis
 {
@@ -20,7 +21,7 @@ namespace RiseSharp.Apis
              if (result.Content != null)
              {
                  var json = await result.Content.ReadAsStringAsync();
-                 return JsonConvert.DeserializeObject<T>(json);
+                 return JsonConvert.DeserializeObject<T>(json, new ResponseJsonConverter<T>());
              }
 			return default(T);
 		}
@@ -38,7 +39,7 @@ namespace RiseSharp.Apis
 			if (result.Content != null)
 			{
 				var json = await result.Content.ReadAsStringAsync();
-				return JsonConvert.DeserializeObject<T2>(json);
+                return JsonConvert.DeserializeObject<T2>(json, new ResponseJsonConverter<T2>());
 			}
 			return default(T2);
 		}
@@ -56,7 +57,7 @@ namespace RiseSharp.Apis
 			if (result.Content != null)
 			{
 				var json = await result.Content.ReadAsStringAsync();
-				return JsonConvert.DeserializeObject<T2>(json);
+                return JsonConvert.DeserializeObject<T2>(json, new ResponseJsonConverter<T2>());
 			}
 			return default(T2);
 		}

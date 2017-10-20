@@ -12,9 +12,9 @@ namespace RiseSharp.Tests
     public class AccountApiTests
     {
 
-        public static string _liveSecret = "cabbage chief join task universe hello grab slush page exit update brisk";
-        public static string _liveAddress = "10861956178781184496R";
-        public static string _livePubKey = "328dc8563b84d8429e2d69dacbb72692b95a1c427961c425f347fce342c1e152";
+        public static string _liveSecret = "want slide symptom battle unknown lock unusual sign veteran rib drift candy";
+        public static string _liveAddress = "16456130399597425493R";
+        public static string _livePubKey = "b4c7ffa18a8281c03e4caea5650e595a7a3d6a7a6f619431192dec7d6db93147";
 
         AccountsApi api = new AccountsApi(new Config(ApiParams.DefaultHost, true, null));
 

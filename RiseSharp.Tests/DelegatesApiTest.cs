@@ -97,7 +97,7 @@ namespace RiseSharp.Tests
         }
 
         [Fact]
-        public void ToggleForgingTest() //TODO
+        public void ToggleForgingTest()
         {
             var response = api.ToggleForging(new Apis.Requests.ToggleForgingRequest {
                 Secret = AccountApiTests._liveSecret
