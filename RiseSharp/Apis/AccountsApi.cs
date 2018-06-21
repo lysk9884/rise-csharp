@@ -9,7 +9,7 @@ namespace RiseSharp.Apis
 {
     public class AccountsApi : BaseApi, IAccountsApi
     {
-        public AccountsApi():base(){}
+        public AccountsApi(){}
 
         public AccountsApi(Config NetworkConfig):base(NetworkConfig){}
 
@@ -37,11 +37,11 @@ namespace RiseSharp.Apis
         public Task<BalanceResponse> GetBalanceAsync(GetBalanceRequest Address)
             => GetSimpleJsonAsync<BalanceResponse, GetBalanceRequest>(Address, Api.GetAccountBalance);
 
-        public DelegatesResponse GetDelegates(GetDelegatesRequest Address)
+        public GetDelegatesResponse GetDelegates(GetDelegatesRequest Address)
             => GetDelegatesAsync(Address).ConfigureAwait(false).GetAwaiter().GetResult();
 
-        public Task<DelegatesResponse> GetDelegatesAsync(GetDelegatesRequest Address)
-            => GetSimpleJsonAsync<DelegatesResponse, GetDelegatesRequest>(Address, Api.GetAccountDelegates);
+        public Task<GetDelegatesResponse> GetDelegatesAsync(GetDelegatesRequest Address)
+            => GetSimpleJsonAsync<GetDelegatesResponse, GetDelegatesRequest>(Address, Api.GetAccountDelegates);
 
         public PublicKeyResponse GetPublicKey(GetPublicKeyRequest Address)
             => GetPublicKeyAsync(Address).ConfigureAwait(false).GetAwaiter().GetResult();

@@ -24,13 +24,13 @@ namespace RiseSharp.Apis.Interfaces
         /// Gets the list async.
         /// </summary>
         /// <returns>The list async.</returns>
-        Task<DelegatesResponse> GetListAsync();
+        Task<GetDelegatesResponse> GetListAsync();
 
         /// <summary>
         /// Gets the list.
         /// </summary>
         /// <returns>The list.</returns>
-        DelegatesResponse GetList();
+        GetDelegatesResponse GetList();
 
         /// <summary>
         /// Gets the name of the by user.

@@ -92,19 +92,19 @@ namespace RiseSharp.Apis.Interfaces
 		/// <param name="PublicKey">Public key</param>
         Task<AccountResponse> GetAccountByPublicKeyAsync(GetAccountByPublicKeyRequest PublicKey);
 
-		/// <summary>
-		/// Return accounts delegates by using the given address
-		/// </summary>
-		/// <returns>DelegatesResponse</returns>
-		/// <param name="Address">Address</param>
-        DelegatesResponse GetDelegates(GetDelegatesRequest Address);
+        /// <summary>
+        /// Return accounts delegates by using the given address
+        /// </summary>
+        /// <returns>DelegatesResponse</returns>
+        /// <param name="Address">Address</param>
+        GetDelegatesResponse GetDelegates(GetDelegatesRequest Address);
 
 		/// <summary>
 		/// Return accounts delegates by using the given address asynchronously
 		/// </summary>
 		/// <returns>Task<DelegatesResponse></returns>
 		/// <param name="Address">Address</param>
-        Task<DelegatesResponse> GetDelegatesAsync(GetDelegatesRequest Address);
+        Task<GetDelegatesResponse> GetDelegatesAsync(GetDelegatesRequest Address);
 
 		/// <summary>
 		/// Cast votes. The delegates array must use delegate Public Key prepended witha "+" or "-" sign wether you want to up/downvote the delegate

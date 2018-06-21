@@ -7,7 +7,7 @@ namespace RiseSharp.Tests
 {
     public class DelegatesApiTest
     {
-        DelegatesApi api = new DelegatesApi(new Config(ApiParams.DefaultHost, true, null));
+        DelegatesApi api = new DelegatesApi(new Config(ApiParams.DefaultHost, ApiParams.UseHttps, null));
 
         [Fact]
         public void EnableTest()
@@ -70,7 +70,6 @@ namespace RiseSharp.Tests
         {
             var response = api.GetList();
             Assert.True(response.Success);
-            Assert.NotNull(response.Delegates);
         }
 
         [Fact]

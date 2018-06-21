@@ -1,0 +1,9 @@
+C:\Users\lysk9\git\rise-csharp\RiseSharp\bin\Debug\netstandard1.6\RiseSharp.deps.json
+C:\Users\lysk9\git\rise-csharp\RiseSharp\bin\Debug\netstandard1.6\RiseSharp.dll
+C:\Users\lysk9\git\rise-csharp\RiseSharp\bin\Debug\netstandard1.6\RiseSharp.pdb
+C:\Users\lysk9\git\rise-csharp\RiseSharp\obj\Debug\netstandard1.6\RiseSharp.csprojResolveAssemblyReference.cache
+C:\Users\lysk9\git\rise-csharp\RiseSharp\obj\Debug\netstandard1.6\RiseSharp.csproj.CoreCompileInputs.cache
+C:\Users\lysk9\git\rise-csharp\RiseSharp\obj\Debug\netstandard1.6\RiseSharp.AssemblyInfoInputs.cache
+C:\Users\lysk9\git\rise-csharp\RiseSharp\obj\Debug\netstandard1.6\RiseSharp.AssemblyInfo.cs
+C:\Users\lysk9\git\rise-csharp\RiseSharp\obj\Debug\netstandard1.6\RiseSharp.dll
+C:\Users\lysk9\git\rise-csharp\RiseSharp\obj\Debug\netstandard1.6\RiseSharp.pdb

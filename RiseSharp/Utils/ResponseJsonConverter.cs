@@ -26,6 +26,9 @@ namespace RiseSharp.Utils
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
+            writer.Formatting = serializer.Formatting;
+            writer.WriteStartObject();
+            
             throw new NotImplementedException("This is deserializer");
         }
     }

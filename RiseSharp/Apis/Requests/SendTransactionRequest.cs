@@ -22,8 +22,8 @@ namespace RiseSharp.Apis.Requests
         [DataMember(Name = "secondSecret")]
         public string SecondSecret { get; set; }
 
-        [DataMember(Name = "multisigAccountPublicKey")] //not sure for this
-        public string MultiSigAccountPublicKey { get; set; }
+        //[DataMember(Name = "multisigAccountPublicKey")] //not sure for this
+        //public string MultiSigAccountPublicKey { get; set; }
 
     }
 }

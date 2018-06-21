@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using RiseSharp.Apis.Attributes;
 using RiseSharp.Apis.Constants;
@@ -31,7 +32,7 @@ namespace RiseSharp.Apis.Base
 			HttpClient = new HttpClient();
             HttpClient.Timeout = TimeSpan.FromMilliseconds(5000);
 
-			UriBuilder = new UriBuilder
+            UriBuilder = new UriBuilder
 			{
 				Host = NetworkConfig.Host,
 				Scheme = NetworkConfig.Scheme,
@@ -72,6 +73,7 @@ namespace RiseSharp.Apis.Base
 			ResetBuilder();
             UriBuilder.Path = Path;
 			UriBuilder.Query = Request.ToQuery();
+
 			return HttpClient.GetJsonAsync<T>(UriBuilder.ToString());
         }
 
@@ -80,7 +82,8 @@ namespace RiseSharp.Apis.Base
         {
 			ResetBuilder();
             UriBuilder.Path = Path;
-			return HttpClient.PutJsonAsync<R, T>(UriBuilder.ToString(), Request);
+
+            return HttpClient.PutJsonAsync<R, T>(UriBuilder.ToString(), Request);
         }
 
 		protected Task<T> PostSimpleJsonAsync<T, R>(R Request, string Path) 
@@ -88,6 +91,7 @@ namespace RiseSharp.Apis.Base
 		{
 			ResetBuilder();
 			UriBuilder.Path = Path;
+
             return HttpClient.PostJsonAsync<R, T>(UriBuilder.ToString(), Request);
 		}
 	}

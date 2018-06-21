@@ -1,0 +1,16 @@
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\bin\Debug\netcoreapp2.0\RiseSharp.Tests.deps.json
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\bin\Debug\netcoreapp2.0\RiseSharp.Tests.runtimeconfig.json
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\bin\Debug\netcoreapp2.0\RiseSharp.Tests.runtimeconfig.dev.json
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\bin\Debug\netcoreapp2.0\RiseSharp.Tests.dll
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\bin\Debug\netcoreapp2.0\RiseSharp.Tests.pdb
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\bin\Debug\netcoreapp2.0\RiseSharp.dll
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\bin\Debug\netcoreapp2.0\RiseSharp.pdb
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\obj\Debug\netcoreapp2.0\RiseSharp.Tests.csprojResolveAssemblyReference.cache
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\obj\Debug\netcoreapp2.0\RiseSharp.Tests.csproj.CoreCompileInputs.cache
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\obj\Debug\netcoreapp2.0\RiseSharp.Tests.AssemblyInfoInputs.cache
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\obj\Debug\netcoreapp2.0\RiseSharp.Tests.AssemblyInfo.cs
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\obj\Debug\netcoreapp2.0\RiseSharp.Tests.dll
+C:\Users\lysk9\git\rise-csharp\RiseSharp.Tests\obj\Debug\netcoreapp2.0\RiseSharp.Tests.pdb

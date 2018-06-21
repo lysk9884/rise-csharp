@@ -1,13 +1,14 @@
-﻿using System;
-using System.Runtime.Serialization;
-using RiseSharp.Apis.Attributes;
+﻿using RiseSharp.Apis.Attributes;
 using RiseSharp.Apis.Requests.Base;
+using System.Runtime.Serialization;
 
 namespace RiseSharp.Apis.Requests
 {
+    [DataContract]
     public class OpenAccountRequest : BaseApiRequest
     {
-        [QueryParam(Name="secret")]
+        [DataMember(Name = "secret")]
+        [QueryParam(Name = "secret")]
         public string Secret { get; set; }
     }
 }

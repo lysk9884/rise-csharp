@@ -45,11 +45,11 @@ namespace RiseSharp.Apis
         public Task<GetForgingStatusResponse> GetForgingStatusAsync(GetForgingStatusRequest Request)
             => GetSimpleJsonAsync<GetForgingStatusResponse, GetForgingStatusRequest>(Request, Api.GetForgingStatus);
 
-        public DelegatesResponse GetList()
+        public GetDelegatesResponse GetList()
             => GetListAsync().GetAwaiter().GetResult();
 
-        public Task<DelegatesResponse> GetListAsync()
-            => GetSimpleJsonAsync<DelegatesResponse>(Api.GetDelegates);
+        public Task<GetDelegatesResponse> GetListAsync()
+            => GetSimpleJsonAsync<GetDelegatesResponse>(Api.GetDelegates);
 
         public GetNextForgersResponse GetNextForgers(GetNextForgersRequest Request)
             => GetNextForgersAsync(Request).GetAwaiter().GetResult();
