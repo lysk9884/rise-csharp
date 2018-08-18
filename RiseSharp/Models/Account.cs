@@ -26,7 +26,7 @@ namespace RiseSharp.Models
         public string SecondPublicKey { get; set; }
 
         [DataMember(Name = "balance")]
-        public int Balance { get; set; }
+        public string Balance { get; set; }
 
         [DataMember(Name = "vote")]
         public int Vote { get; set; }
@@ -34,5 +34,47 @@ namespace RiseSharp.Models
         [DataMember(Name = "rate")]
         public int Rate { get; set; }
 
+        [DataMember(Name = "delegates")]
+        public string[] Delegates;
+
+        [DataMember(Name = "multisignatures")]
+        public string[] MultiSignatures;
+
+        [DataMember(Name = "multimin")]
+        public int MultiMin;
+
+        [DataMember(Name = "multilifetime")]
+        public int MultiLifetime;
+
+        [DataMember(Name = "blockId")]
+        public string BlockID;
+
+        [DataMember(Name = "nameexist")]
+        public bool NameExist;
+
+        [DataMember(Name = "producedblocks")]
+        public int ProducedBlocks;
+
+        [DataMember(Name = "missedblocks")]
+        public int MissedBlocks;
+
+        [DataMember(Name = "fees")]
+        public int Fees;
+
+        [DataMember(Name = "rewards")]
+        public int Rewards;
+
+        [DataMember(Name = "virgin")]
+        public bool Virgin;
+
+        //unconfiremd stuff
+        [DataMember(Name = "unconfirmedBalance")]
+        public string UnconfirmedBalance { get; set; }
+
+        [DataMember(Name = "unconfirmedSignature")]
+        public bool UnconfirmedSingature { get; set; }
+
+        [DataMember(Name = "u_multisignatures")]
+        public string[] UnconfirmedMultiSignatures;
     }
 }

@@ -34,7 +34,6 @@ namespace RiseSharp.Apis.Constants
 		public const string GetAccountDelegatesFee =        "/api/accounts/delegates/fee";
 		public const string GetAccountPublickey =           "/api/accounts/getPublicKey";
 		public const string GetAccountBalance =             "/api/accounts/getBalance";
-		public const string PostAccountOpen =               "/api/accounts/open";
 		public const string PutAccountDelegateAdd =         "/api/accounts/delegates";
         public const string PostGeneratePublicKey =         "/api/accounts/generatePublicKey";
 

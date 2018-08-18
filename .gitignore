@@ -24,3 +24,7 @@ ehthumbs.db
 # ============ #
 patch.diff
 
+RiseSharp/obj/
+RiseSharp/bin/
+RiseSharp.Tests/obj/
+RiseSharp.Tests/bin/

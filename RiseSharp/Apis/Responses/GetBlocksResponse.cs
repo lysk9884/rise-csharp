@@ -10,7 +10,7 @@ namespace RiseSharp.Apis.Responses
 	public class GetBlocksResponse : BaseApiResponse
 	{
 		[DataMember(Name = "blocks")]
-		public IList<Block> Blocks { get; set; }
+		public List<Block> Blocks { get; set; }
 
 		[DataMember(Name = "count")]
 		public int Count { get; set; }

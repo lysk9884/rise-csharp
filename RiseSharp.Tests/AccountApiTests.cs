@@ -10,9 +10,9 @@ namespace RiseSharp.Tests
     [TestCaseOrderer("RiseSharp.Tests.Attrs.PriorityOrderer", "RiseSharp.Tests")]
     public class AccountApiTests
     {
-        public static string _liveSecret = "point major hold price frost away wonder gadget more predict avocado march";
-        public static string _liveAddress = "1103307164606891969R";
-        public static string _livePubKey = "a4413ebd8ea3e2fd58453ae61f46b0a5498e37e33210d95426be8066ac2f203a";
+        public static string _liveSecret = "sniff case husband impulse nerve aunt vacant air shallow hope fold hole";
+        public static string _liveAddress = "5536192064797317240R";
+        public static string _livePubKey = "99551e800e58525ff90cefd00760c0a40283abab6cdec8a8b8a633c172b81d60";
 
         private AccountsApi api = new AccountsApi(new Config(ApiParams.DefaultHost, ApiParams.UseHttps, ApiParams.DefaultPort));
 
@@ -32,16 +32,6 @@ namespace RiseSharp.Tests
                 Secret = _liveSecret
             });
             Assert.NotNull(response.PublicKey);
-            Assert.True(response.Success);
-        }
-
-        [Fact, TestPriority(1)]
-        public void OpenAccount()
-        {
-            var response = api.Open(new Apis.Requests.OpenAccountRequest
-            {
-                Secret = _liveSecret
-            });
             Assert.True(response.Success);
         }
 

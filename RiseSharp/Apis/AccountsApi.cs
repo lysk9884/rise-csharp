@@ -49,12 +49,6 @@ namespace RiseSharp.Apis
         public Task<PublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest Address)
             => GetSimpleJsonAsync<PublicKeyResponse, GetPublicKeyRequest>(Address, Api.GetAccountPublickey);
 
-        public AccountResponse Open(OpenAccountRequest Secret)
-            => OpenAsync(Secret).ConfigureAwait(false).GetAwaiter().GetResult();
-
-        public Task<AccountResponse> OpenAsync(OpenAccountRequest Secret)
-            => PostSimpleJsonAsync<AccountResponse, OpenAccountRequest>(Secret, Api.PostAccountOpen);
-
         public object PutDelegates(PutDelegatesRequest Request)
             => PutDelegatesAsync(Request).ConfigureAwait(false).GetAwaiter().GetResult();
 

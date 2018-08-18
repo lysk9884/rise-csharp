@@ -35,12 +35,12 @@ namespace RiseSharp.Apis
         public static async Task<T2> PostJsonAsync<T1, T2>(this HttpClient client, string url, T1 req) where T1 : BaseApiRequest
         {
             var encodingType = System.Text.Encoding.UTF8;
-            //var headerType = "application/json";
-            var headerType = "application/x-www-form-urlencoded";
-            //var content = new StringContent(req.ToString(), encodingType, headerType);
-            var content = new FormUrlEncodedContent(req.ToKeyValue());
-            //urlContent.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
-            content.Headers.ContentType = new MediaTypeHeaderValue(headerType);
+            var contentType = "application/json";
+
+            //var headerType = "application/x-www-form-urlencoded";
+            var content = new StringContent(req.ToString(), encodingType, contentType);
+            //var content = new FormUrlEncodedContent(req.ToKeyValue());
+            content.Headers.ContentType = new MediaTypeHeaderValue(contentType);
 
             var result = await client.PostAsync(url, content).ConfigureAwait(false);
             result.EnsureSuccessStatusCode();

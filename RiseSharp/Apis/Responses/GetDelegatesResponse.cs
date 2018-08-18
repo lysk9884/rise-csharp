@@ -9,9 +9,6 @@ namespace RiseSharp.Apis.Responses
 	public class GetDelegatesResponse : BaseApiResponse
 	{
         [DataMember(Name = "delegates", Order = 2)]
-        public List<Delegate> Delegates { get; set; }
-
-        [DataMember(Name = "totalcount", Order = 3)]
-        public int TotalCount { get; set; }
+        public List<int> Delegates { get; set; }
     }
 }

@@ -5,10 +5,10 @@
         public const string Https = "https";
         public const string Http = "http";
 
-        public const string DefaultHost = "testnode1.rise.vision";
+        public const string DefaultHost = "51.15.193.40";
         public const string DefaultHostIp = "194.135.95.105";
 
-        public const int DefaultPort = 5566;
+        public const int DefaultPort = 8080;
 
         public const bool UseHttps = false;
 

@@ -9,20 +9,6 @@ namespace RiseSharp.Apis.Interfaces
     public interface IAccountsApi
     {
 		/// <summary>
-		/// Opens a new account using the specified secrect string
-		/// </summary>
-		/// <returns>AccountResponse</returns>
-		/// <param name="Secret">secret the string to use to generate the new account</param>
-        AccountResponse Open(OpenAccountRequest Secret);
-
-		/// <summary>
-		/// Opens a new account using the specified secrect string asynchronously
-		/// </summary>
-		/// <returns>Task<AccountResponse></returns>
-		/// <param name="Secret">secret the string to use to generate the new account</param>
-        Task<AccountResponse> OpenAsync(OpenAccountRequest Secret);
-
-		/// <summary>
 		/// Returns balance and unconfirmed balance for the specified address
 		/// </summary>
 		/// <returns>BalanceResponse</returns>
